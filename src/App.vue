@@ -61,7 +61,7 @@ import { Component, Vue } from 'vue-property-decorator';
       
       let formattedTime = seconds.toString().padStart(2,'0')
       if(showMs){
-        formattedTime = `${formattedTime}:${ms.toString().substr(0,2)}`
+        formattedTime = `${formattedTime}:${ms.toString().substr(0,2).toString().padStart(2, '0')}`
       }
       formattedTime = `${minutes.toString().padStart(2,'0')}:${formattedTime}`
       if(hours){
@@ -244,6 +244,9 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.countdown{
+  font-family: monospace;
 }
 .countdown, .yay{
   font-size: 12rem;
